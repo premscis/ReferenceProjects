@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+ <datasource jta="true" jndi-name="java:jboss/datasources/MySQL_premscis" enabled="true" 
+     use-java-context="true" pool-name="MySQL_premscis">
+  <connection-url>jdbc:mysql://localhost:3306/premscis</connection-url>
+  <driver>mysql-connector-java-5.1.26-bin.jar</driver>
+  <pool></pool>
+  <security>
+   <user-name>premscis</user-name>
+   <password>premscis</password>
+  </security>
+ </datasource>
+</datasources>

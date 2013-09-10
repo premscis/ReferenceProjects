@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:dataTable value="#{bookController.bookList}" var="bookList" binding="#{bookController.bookHtmlDataTable}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ISBN"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{bookList.isbn}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Title"/>
+                </f:facet>
+                <h:outputText value="#{bookList.title}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Price"/>
+                </f:facet>
+                <h:outputText value="#{bookList.price}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Description"/>
+                </f:facet>
+                <h:outputText value="#{bookList.description}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Number Of Pages"/>
+                </f:facet>
+                <h:outputText value="#{bookList.nbOfPage}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Illustrations"/>
+                </f:facet>
+                <h:outputText value="#{bookList.illustrations}"/>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Edit" action="#{bookController.prepareEditBook()}" immediate="true"></h:commandButton>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Delete" action="#{bookController.doDeleteBook()}" immediate="true"></h:commandButton>
+            </h:column>
+        </h:dataTable>
+        </h:form>
+        <h:form>
+            <h:link outcome="#{bookController.prepareCreateBook()}" value="Create a new book"/>
+        </h:form>
+        <hr/>
+    </h:body>
+</html>

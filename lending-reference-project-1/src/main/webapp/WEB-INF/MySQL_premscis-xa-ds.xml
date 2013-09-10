@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<xa-datasource jndi-name="java:jboss/datasources/MySQL_premscis_xa"
+		pool-name="MySQL_premscis" enabled="true" use-java-context="true">
+
+		<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+
+		<xa-datasource-property name="PortNumber">3306
+		</xa-datasource-property>
+		<xa-datasource-property name="ServerName">localhost
+		</xa-datasource-property>
+		<xa-datasource-property name="DatabaseName">premscis
+		</xa-datasource-property>
+
+		<driver>mysql-connector-java-5.1.26-bin.jar</driver>
+
+		<security>
+			<user-name>premscis</user-name>
+			<password>premscis</password>
+		</security>
+
+	</xa-datasource>
+</datasources>

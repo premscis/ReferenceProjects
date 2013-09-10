@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Edit</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="ID"></h:outputLabel>
+                <h:inputText value="#{customerController.customer.id}" disabled="true"></h:inputText>
+                <h:outputLabel value="Frist name : "/>
+                <h:inputText value="#{customerController.customer.firstName}"/>
+                <h:outputLabel value="Last name : "/>
+                <h:inputText value="#{customerController.customer.lastName}"/>
+                <h:outputLabel value="eMail : "/>
+                <h:inputText value="#{customerController.customer.email}"/>
+                <h:outputLabel value="Date of birth : "/>
+                <h:inputText value="#{customerController.customer.dateOfBirth}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
+                </h:inputText>
+            </h:panelGrid>
+            <h:commandButton value="Edit customer" action="#{customerController.doEditCustomer()}"/>
+        </h:form>
+        <hr/>
+    </h:body>
+</html>

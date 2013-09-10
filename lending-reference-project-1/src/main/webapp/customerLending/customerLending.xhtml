@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Show lendings by customer</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="ID"></h:outputLabel>
+			<h:inputText value="#{customerController.customer.id}"
+				disabled="true"></h:inputText>
+			<h:outputLabel value="Frist name : " />
+			<h:inputText value="#{customerController.customer.firstName}"
+				disabled="true" />
+			<h:outputLabel value="Last name : " />
+			<h:inputText value="#{customerController.customer.lastName}"
+				disabled="true" />
+			<h:outputLabel value="eMail : " />
+			<h:inputText value="#{customerController.customer.email}"
+				disabled="true" />
+			<h:outputLabel value="Date of birth : " />
+			<h:inputText value="#{customerController.customer.dateOfBirth}"
+				disabled="true">
+				<f:convertDateTime pattern="dd.MM.yyyy" />
+			</h:inputText>
+			<h:outputLabel value="Age : " />
+			<h:inputText value="#{customerController.customer.age}"
+				disabled="true" />
+		</h:panelGrid>
+	</h:form>
+	<br />
+	<h:form>
+		<h:dataTable value="#{customerLendingController.bookLendingList}"
+			var="bookLendingList"
+			binding="#{customerLendingController.bookLendingHtmlDataTable}">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Book Title"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{bookLendingList.book.title}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ISBN" />
+				</f:facet>
+				<h:outputText value="#{bookLendingList.book.isbn}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Lending Date" />
+				</f:facet>
+				<h:outputText value="#{bookLendingList.lendingDate}">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Return Date" />
+				</f:facet>
+				<h:outputText value="#{bookLendingList.returnDate}">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Number of days to return" />
+				</f:facet>
+				<h:outputText value="#{bookLendingList.nbOfDaysToReturn}" />
+			</h:column>
+			<h:column>
+				<h:commandButton value="End lending"
+					action="#{customerLendingController.doEndLending()}"
+					immediate="true" disabled="#{!bookLendingList.bookIsLended}"></h:commandButton>
+			</h:column>
+			<h:column>
+				<h:commandButton value="Delete lending"
+					action="#{customerLendingController.doDeleteLending()}"
+					immediate="true"></h:commandButton>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<br />
+	<h:form>
+		<h:dataTable value="#{customerLendingController.notLendedBookList}"
+			var="notLendedBookList"
+			binding="#{customerLendingController.notLendedBookHtmlDataTable}">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ISBN"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.isbn}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Title" />
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.title}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Price" />
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.price}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Description" />
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.description}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Number Of Pages" />
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.nbOfPage}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Illustrations" />
+				</f:facet>
+				<h:outputText value="#{notLendedBookList.illustrations}" />
+			</h:column>
+			<h:column>
+				<h:commandButton value="Lend book"
+					action="#{customerLendingController.doLending()}" immediate="true"></h:commandButton>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

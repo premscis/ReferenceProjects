@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:dataTable value="#{customerController.customerList}" var="customerList" binding="#{customerController.customerHtmlDataTable}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="First name"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{customerList.firstName}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Last name"/>
+                </f:facet>
+                <h:outputText value="#{customerList.lastName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="eMail"/>
+                </f:facet>
+                <h:outputText value="#{customerList.email}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Date of birth"/>
+                </f:facet>
+                <h:outputText value="#{customerList.dateOfBirth}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Age"/>
+                </f:facet>
+                <h:outputText value="#{customerList.age}"/>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Edit" action="#{customerController.prepareEditCustomer()}" immediate="true"></h:commandButton>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Delete" action="#{customerController.doDeleteCustomer()}" immediate="true"></h:commandButton>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Lendings" action="#{customerLendingController.prepareLending()}" immediate="true"></h:commandButton>
+            </h:column>
+        </h:dataTable>
+        </h:form>
+        <h:form>
+            <h:link outcome="#{customerController.prepareCreateCustomer()}" value="Create a new customer"/>
+        </h:form>
+        <hr/>
+    </h:body>
+</html>

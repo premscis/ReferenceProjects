@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#book#listBooks.xhtml"
+  PATH="/book/listBooks.xhtml" SHAPE="288,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#book#listBooks.xhtml:0" NAME="item"
+   PATH="/book/listBooks.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="editBookCase::#book#editBook.xhtml"
+    NAME="output" PATH="/book/editBook.xhtml" SHAPE="-1,16"
+    TARGET="rules:#book#editBook.xhtml" TITLE="editBookCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="newBookCase::#book#newBook.xhtml"
+    NAME="output1" PATH="/book/newBook.xhtml" SHAPE="-1,16"
+    TARGET="rules:#book#newBook.xhtml" TITLE="newBookCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listBooksCase::#book#listBooks.xhtml"
+    NAME="output2" PATH="/book/listBooks.xhtml" SHAPE="-1,24"
+    TARGET="rules:#book#listBooks.xhtml" TITLE="listBooksCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#book#editBook.xhtml"
+  PATH="/book/editBook.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#book#editBook.xhtml:0" NAME="item"
+   PATH="/book/editBook.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listBooksCase::#book#listBooks.xhtml"
+    NAME="output" PATH="/book/listBooks.xhtml" SHAPE="-1,24"
+    TARGET="rules:#book#listBooks.xhtml" TITLE="listBooksCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#book#newBook.xhtml"
+  PATH="/book/newBook.xhtml" SHAPE="544,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#book#newBook.xhtml:0" NAME="item"
+   PATH="/book/newBook.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listBooksCase::#book#listBooks.xhtml"
+    NAME="output" PATH="/book/listBooks.xhtml" SHAPE="-1,24"
+    TARGET="rules:#book#listBooks.xhtml" TITLE="listBooksCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#customer#listCustomers.xhtml"
+  PATH="/customer/listCustomers.xhtml" SHAPE="288,209,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#customer#listCustomers.xhtml:0" NAME="item"
+   PATH="/customer/listCustomers.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="editCustomerCase::#customer#editCustomer.xhtml" NAME="output"
+    PATH="/customer/editCustomer.xhtml" SHAPE="-1,24"
+    TARGET="rules:#customer#editCustomer.xhtml" TITLE="editCustomerCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="newCustomerCase::#customer#newCustomer.xhtml" NAME="output1"
+    PATH="/customer/newCustomer.xhtml" SHAPE="-1,16"
+    TARGET="rules:#customer#newCustomer.xhtml" TITLE="newCustomerCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listCustomersCase::#customer#listCustomers.xhtml" NAME="output2"
+    PATH="/customer/listCustomers.xhtml" SHAPE="-1,16"
+    TARGET="rules:#customer#listCustomers.xhtml"
+    TITLE="listCustomersCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="customerLendingCase::#customerLending#customerLending.xhtml"
+    NAME="output3" PATH="/customerLending/customerLending.xhtml"
+    SHAPE="-1,24" TARGET="rules:#customerLending#customerLending.xhtml"
+    TITLE="customerLendingCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#customer#editCustomer.xhtml"
+  PATH="/customer/editCustomer.xhtml" SHAPE="32,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#customer#editCustomer.xhtml:0" NAME="item"
+   PATH="/customer/editCustomer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="listCustomersCase::#customer#listCustomers.xhtml" NAME="output"
+    PATH="/customer/listCustomers.xhtml" SHAPE="-1,16"
+    TARGET="rules:#customer#listCustomers.xhtml"
+    TITLE="listCustomersCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#customer#newCustomer.xhtml"
+  PATH="/customer/newCustomer.xhtml" SHAPE="544,193,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#customer#newCustomer.xhtml:0" NAME="item"
+   PATH="/customer/newCustomer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="listCustomersCase::#customer#listCustomers.xhtml" NAME="output"
+    PATH="/customer/listCustomers.xhtml" SHAPE="-1,16"
+    TARGET="rules:#customer#listCustomers.xhtml"
+    TITLE="listCustomersCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="32,193,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="listCustomersCase::#customer#listCustomers.xhtml" NAME="output"
+    PATH="/customer/listCustomers.xhtml" SHAPE="-1,16"
+    TARGET="rules:#customer#listCustomers.xhtml"
+    TITLE="listCustomersCase" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listBooksCase::#book#listBooks.xhtml"
+    NAME="output1" PATH="/book/listBooks.xhtml" SHAPE="-1,24"
+    TARGET="rules:#book#listBooks.xhtml" TITLE="listBooksCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#customerLending#customerLending.xhtml"
+  PATH="/customerLending/customerLending.xhtml" SHAPE="544,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#customerLending#customerLending.xhtml:0"
+   NAME="item" PATH="/customerLending/customerLending.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="customerLendingCase::#customerLending#customerLending.xhtml"
+    NAME="output" PATH="/customerLending/customerLending.xhtml"
+    SHAPE="-1,24" TARGET="rules:#customerLending#customerLending.xhtml"
+    TITLE="customerLendingCase" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
