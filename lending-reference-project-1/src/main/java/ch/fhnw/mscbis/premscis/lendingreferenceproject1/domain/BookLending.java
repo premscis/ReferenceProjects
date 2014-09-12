@@ -19,7 +19,7 @@ import javax.persistence.*;
     @NamedQuery(name = "findLendingByCustomer", query = "SELECT l FROM BookLending l, Customer c WHERE l.customer = c AND l.customer = :customer ORDER BY l.lendingDate"),
     @NamedQuery(name = "findLendingByCustomerAndBookId", query = "SELECT l FROM BookLending l, Book b, Customer c WHERE l.book = b AND l.customer = c AND l.book = :book AND l.customer = :customer ORDER BY l.lendingDate"),
     @NamedQuery(name = "findOpenLendingByCustomerAndBookId", query = "SELECT l FROM BookLending l, Book b, Customer c WHERE l.book = b AND l.customer = c AND l.book = :book AND l.customer = :customer AND l.returnDate=NULL ORDER BY l.lendingDate"),
-    @NamedQuery(name = "findNotLendedBooks", query = "select b from Book b WHERE b.id NOT IN (select bl.book.id from BookLending bl WHERE bl.bookIsLended = 1)")
+    @NamedQuery(name = "findNotLendedBooks", query = "select b from Book b WHERE b.id NOT IN (select bl.book.id from BookLending bl WHERE bl.bookIsLended = true)")
 })
 @Table(name="BOOKLENDING_LENDING_REFERENCE_PROJECT_1")
 public class BookLending implements Serializable {
